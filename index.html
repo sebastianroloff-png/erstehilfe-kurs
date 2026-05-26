@@ -1,228 +1,545 @@
-ERSTE-HILFE-WISSEN FÜR:
-🚗 Führerschein
-🩺 Ersthelfer
-🏃 Übungsleiter
-📚 Lehrer
-💊 Pflegepersonal
-ERSTE
-HILFE.
- ONLINE.
-45 Minuten Sofortiges Zertifikat 100% Online
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erste Hilfe Online-Kurs | Zertifikat sofort</title>
+<!-- Preload critical resources -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* CRITICAL CSS FIRST */
+:root{--rot:#CC0000;--dunkelrot:#990000;--weiss:#FFFFFF;--schwarz:#0A0A0A;--gold:#C9A227;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--schwarz);color:var(--weiss);overflow-x:hidden;}
 
-Bitte stimmen Sie unseren AGB zu: Ich möchte den Kurs sofort freischalten und mein Zertifikat sofort im Anschluss erhalten. Ich verzichte ausdrücklich auf mein gesetzliches Widerrufsrecht gemäß §356 Abs. 5 BGB.
-Erst nach Bestätigung wird der Kaufbutton aktiv.
-NUR 29,99 € — JETZT STARTEN
-Einmalzahlung · Sofortzugang · Zertifikat inklusive
+/* HERO */
+.hero{
+  min-height:100vh;background:var(--schwarz);position:relative;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:40px 20px 60px;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:-150px;left:50%;transform:translateX(-50%);
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(204,0,0,.22) 0%,transparent 70%);
+  animation:pulse 4s ease-in-out infinite;pointer-events:none;
+  will-change:transform;
+}
+@keyframes pulse{0%,100%{transform:translateX(-50%) scale(1);opacity:.7}50%{transform:translateX(-50%) scale(1.12);opacity:1}}
 
-Lena S.
- aus Stuttgart hat sich gerade angemeldet
+/* BADGE */
+.badge-wrap{text-align:center;margin-bottom:22px;animation:fadeDown .5s ease both;}
+.badge-small{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#777;display:block;margin-bottom:10px;}
+.badge-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;}
+.badge-tag{
+  background:rgba(204,0,0,.1);border:1px solid rgba(204,0,0,.3);color:#ff8888;
+  font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;
+}
 
-Kevin M.
- aus Görlitz hat sich gerade angemeldet
+/* HERO H1 */
+.hero h1{
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,13vw,115px);line-height:.88;text-align:center;
+  animation:fadeDown .7s ease .1s both;
+}
+.hero h1 span{color:var(--rot);display:block;}
 
-Maxi P.
- aus Koblenz hat sich gerade angemeldet
+/* HERO SUB — fett, größer, rot für Zertifikat */
+.hero-features{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:8px 24px;
+  margin:28px auto 0;max-width:560px;
+  animation:fadeDown .7s ease .2s both;
+}
+.hero-feat{
+  font-size:clamp(17px,3.5vw,22px);font-weight:700;color:var(--weiss);
+  display:flex;align-items:center;gap:8px;
+}
+.hero-feat.red{color:var(--rot);}
+.hero-feat::before{content:'';width:6px;height:6px;background:var(--rot);border-radius:50%;flex-shrink:0;}
 
-Jonas W.
- aus Hamburg hat sich gerade angemeldet
+/* CTA */
+.cta-wrap{
+  margin-top:36px;display:flex;flex-direction:column;align-items:center;gap:12px;
+  animation:fadeDown .7s ease .3s both;width:100%;max-width:500px;
+}
+.widerruf-box{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);
+  border-radius:10px;padding:16px 18px;width:100%;
+}
+.widerruf-label{
+  display:flex;align-items:flex-start;gap:12px;cursor:pointer;
+  font-size:13px;color:#aaa;line-height:1.55;
+}
+.widerruf-label input[type=checkbox]{
+  width:20px;height:20px;margin-top:2px;flex-shrink:0;
+  accent-color:var(--rot);cursor:pointer;
+}
+.widerruf-label span strong{color:var(--weiss);}
+.widerruf-hint{font-size:11px;color:#555;margin-top:6px;padding-left:32px;}
 
-Sarah K.
- aus München hat sich gerade angemeldet
+.btn-main{
+  display:block;width:100%;background:#3a3a3a;color:#777;
+  font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2px;
+  padding:20px 48px;border-radius:8px;text-decoration:none;text-align:center;
+  transition:all .3s;border:none;cursor:not-allowed;position:relative;overflow:hidden;
+}
+.btn-main.active{
+  background:var(--rot);color:var(--weiss);cursor:pointer;
+  box-shadow:0 8px 32px rgba(204,0,0,.5);
+}
+.btn-main.active:hover{transform:translateY(-3px) scale(1.02);background:#e00;}
+.btn-main.active::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.12) 0%,transparent 60%);}
+.btn-error{font-size:12px;color:var(--rot);display:none;font-weight:700;text-align:center;}
+.price-note{font-size:13px;color:#888;text-align:center;}
+.price-note strong{color:var(--gold);font-size:18px;}
 
-Tim R.
- aus Berlin hat sich gerade angemeldet
+/* TICKER — schneller */
+.ticker-wrap{
+  width:100%;overflow:hidden;
+  background:rgba(204,0,0,.07);
+  border-top:1px solid rgba(204,0,0,.2);border-bottom:1px solid rgba(204,0,0,.2);
+  padding:11px 0;
+}
+.ticker-track{
+  display:flex;gap:0;white-space:nowrap;
+  animation:ticker 35s linear infinite; /* schneller */
+  will-change:transform;
+}
+.ticker-item{display:inline-flex;align-items:center;gap:8px;padding:0 36px;font-size:13px;color:#bbb;}
+.ticker-item .dot{width:6px;height:6px;background:var(--rot);border-radius:50%;flex-shrink:0;}
+.ticker-item .name{color:var(--weiss);font-weight:700;}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-Anna L.
- aus Köln hat sich gerade angemeldet
+/* SECTIONS */
+section{padding:80px 20px;max-width:900px;margin:0 auto;}
+.section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--rot);margin-bottom:14px;font-weight:700;text-align:center;}
+h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,7vw,64px);line-height:1;margin-bottom:24px;text-align:center;}
+.full-wrap{width:100%;}
+.full-wrap section{max-width:900px;margin:0 auto;}
 
-Felix B.
- aus Dresden hat sich gerade angemeldet
+/* SIMPLE BENEFITS */
+.simple-benefits{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:28px;}
+.simple-benefit{text-align:center;}
+.simple-benefit .sbi{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--rot);margin-bottom:4px;}
+.simple-benefit p{font-size:13px;color:#888;}
 
-Marie H.
- aus Frankfurt hat sich gerade angemeldet
+/* KURSINHALT */
+.ue-list{margin-top:36px;display:grid;gap:10px;}
+.ue-item{
+  display:flex;align-items:center;gap:16px;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:10px;padding:14px 20px;transition:border-color .2s;
+}
+.ue-item:hover{border-color:rgba(204,0,0,.35);}
+.ue-num{font-family:'Bebas Neue',sans-serif;font-size:13px;color:var(--rot);min-width:36px;letter-spacing:1px;}
+.ue-title{font-size:15px;font-weight:500;}
+.ue-check{margin-left:auto;color:var(--rot);}
 
-Nico T.
- aus Düsseldorf hat sich gerade angemeldet
+/* AUSBILDER */
+.ausbilder-section{display:flex;flex-direction:column;align-items:center;text-align:center;}
+.ausbilder-stamp img{width:130px;height:130px;object-fit:contain;opacity:.9;margin-bottom:20px;}
+.credentials{margin-top:16px;display:flex;flex-direction:column;gap:10px;max-width:500px;text-align:left;}
+.credential{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#aaa;line-height:1.4;}
+.credential .dot{width:7px;height:7px;background:var(--rot);border-radius:50%;margin-top:5px;flex-shrink:0;}
 
-Julia F.
- aus Leipzig hat sich gerade angemeldet
+/* ZERTIFIKAT */
+.zert-section{text-align:center;}
+.zert-preview{
+  margin:44px auto 0;max-width:540px;
+  background:linear-gradient(135deg,#1a1a1a,#111);
+  border:2px solid var(--rot);border-radius:16px;padding:34px 26px;position:relative;
+}
+.zert-preview::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--rot),var(--gold),var(--rot));}
+.zert-preview h3{font-family:'Bebas Neue',sans-serif;font-size:34px;color:var(--rot);margin-bottom:8px;}
+.zert-name{font-size:26px;font-weight:700;border-bottom:2px solid var(--gold);display:inline-block;padding-bottom:4px;margin:16px 0 14px;}
+.zert-preview p{color:#aaa;font-size:13px;line-height:1.6;}
+.zert-seal{margin-top:18px;display:inline-block;border:2px solid var(--rot);border-radius:50%;width:62px;height:62px;line-height:58px;font-size:24px;}
 
-Marco D.
- aus Hannover hat sich gerade angemeldet
+/* PREIS */
+.preis-section{text-align:center;}
+.preis-box{
+  max-width:480px;margin:44px auto 0;
+  background:linear-gradient(135deg,rgba(204,0,0,.12),rgba(0,0,0,.4));
+  border:1px solid rgba(204,0,0,.3);border-radius:20px;padding:40px 26px;
+}
+.preis-amount{font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:1;}
+.preis-amount sup{font-size:28px;vertical-align:top;margin-top:14px;display:inline-block;}
+.preis-amount span{font-size:26px;}
+.preis-sub{color:#888;font-size:13px;margin:8px 0 26px;}
+.includes{text-align:left;margin:0 0 26px;display:flex;flex-direction:column;gap:10px;}
+.include-item{display:flex;align-items:center;gap:10px;font-size:14px;color:#ccc;}
+.include-item::before{content:'✓';color:var(--rot);font-weight:700;}
+.cta-box{width:100%;display:flex;flex-direction:column;gap:12px;}
+.cta-box .widerruf-box{background:rgba(255,255,255,.03);}
 
-Lisa N.
- aus Bremen hat sich gerade angemeldet
+/* FAQ */
+.faq-list{margin-top:36px;display:flex;flex-direction:column;gap:10px;}
+.faq-item{border:1px solid rgba(255,255,255,.08);border-radius:10px;overflow:hidden;}
+.faq-q{padding:18px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:15px;transition:background .2s;user-select:none;}
+.faq-q:hover{background:rgba(255,255,255,.04);}
+.faq-q .arrow{transition:transform .3s;font-size:12px;color:var(--rot);}
+.faq-item.open .faq-q .arrow{transform:rotate(180deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s;padding:0 20px;color:#aaa;font-size:14px;line-height:1.7;}
+.faq-item.open .faq-a{max-height:300px;padding:0 20px 20px;}
 
-Pascal G.
- aus Nürnberg hat sich gerade angemeldet
+/* MODALS */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:200;overflow-y:auto;padding:40px 20px;}
+.modal-overlay.open{display:block;}
+.modal-box{background:#111;border:1px solid rgba(255,255,255,.1);border-radius:16px;max-width:660px;margin:0 auto;padding:34px 26px;position:relative;}
+.modal-close{position:absolute;top:14px;right:18px;font-size:22px;cursor:pointer;color:#666;background:none;border:none;}
+.modal-close:hover{color:var(--weiss);}
+.modal-box h2{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--rot);margin-bottom:18px;}
+.modal-box h3{font-size:14px;font-weight:700;margin:16px 0 5px;color:var(--weiss);}
+.modal-box p,.modal-box li{font-size:13px;color:#aaa;line-height:1.7;}
+.modal-box ul{padding-left:18px;}
+.modal-box a{color:var(--rot);}
 
-Hanna O.
- aus Mannheim hat sich gerade angemeldet
+/* FOOTER */
+.footer{background:#050505;border-top:1px solid rgba(255,255,255,.06);padding:40px 20px;text-align:center;}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--rot);margin-bottom:14px;}
+.footer-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:20px;}
+.footer-links a{color:#666;text-decoration:none;font-size:13px;cursor:pointer;transition:color .2s;}
+.footer-links a:hover{color:#ccc;}
+.legal-box{
+  background:rgba(204,0,0,.07);border:1px solid rgba(204,0,0,.2);border-radius:10px;
+  padding:18px;max-width:740px;margin:0 auto 20px;font-size:11px;color:#666;line-height:1.7;text-align:left;
+}
+.legal-box strong{color:#999;}
+.footer-copy{color:#444;font-size:11px;}
 
-David Z.
- aus Freiburg hat sich gerade angemeldet
+/* ANIMATIONS */
+@keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .55s ease,transform .55s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
 
-Lea M.
- aus Dortmund hat sich gerade angemeldet
+/* STICKY MOBILE */
+.sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--rot);padding:14px 20px;text-align:center;z-index:100;box-shadow:0 -4px 20px rgba(204,0,0,.4);}
+.sticky-cta a{color:var(--weiss);text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:2px;}
 
-Tobias S.
- aus Essen hat sich gerade angemeldet
+/* MOBILE */
+@media(max-width:768px){
+  .sticky-cta{display:block;}
+  body{padding-bottom:58px;}
+  section{padding:56px 16px;}
+  .hero-features{gap:6px 16px;}
+  .simple-benefits{gap:24px;}
+}
+@media(max-width:480px){
+  .hero-features{flex-direction:column;gap:10px;align-items:flex-start;padding:0 8px;}
+}
+</style>
+</head>
+<body>
 
-Nina W.
- aus Bielefeld hat sich gerade angemeldet
+<!-- HERO -->
+<div class="hero" id="top">
+  <div class="badge-wrap">
+    <span class="badge-small">Erste-Hilfe-Wissen für:</span>
+    <div class="badge-tags">
+      <span class="badge-tag">🚗 Führerschein</span>
+      <span class="badge-tag">🩺 Ersthelfer</span>
+      <span class="badge-tag">🏃 Übungsleiter</span>
+      <span class="badge-tag">📚 Lehrer</span>
+      <span class="badge-tag">💊 Pflegepersonal</span>
+    </div>
+  </div>
 
-Simon A.
- aus Rostock hat sich gerade angemeldet
+  <h1>ERSTE<br><span>HILFE.</span><br>ONLINE.</h1>
 
-Lena S.
- aus Stuttgart hat sich gerade angemeldet
+  <div class="hero-features">
+    <div class="hero-feat">45 Minuten</div>
+    <div class="hero-feat red">Sofortiges Zertifikat</div>
+    <div class="hero-feat">100% Online</div>
+  </div>
 
-Kevin M.
- aus Görlitz hat sich gerade angemeldet
+  <div class="cta-wrap">
+    <div class="widerruf-box">
+      <label class="widerruf-label">
+        <input type="checkbox" id="cb-hero" onchange="toggleBtn('btn-hero','cb-hero','err-hero')">
+        <span>Bitte stimmen Sie unseren AGB zu: <strong>Ich möchte den Kurs sofort freischalten und mein Zertifikat sofort im Anschluss erhalten. Ich verzichte ausdrücklich auf mein gesetzliches Widerrufsrecht gemäß §356 Abs. 5 BGB.</strong></span>
+      </label>
+      <p class="widerruf-hint">Erst nach Bestätigung wird der Kaufbutton aktiv.</p>
+    </div>
+    <span class="btn-error" id="err-hero">⚠ Bitte erst den Text oben bestätigen.</span>
+    <a href="https://www.checkout-ds24.com/product/695257" id="btn-hero" class="btn-main" onclick="return checkBtn('cb-hero','err-hero')">NUR 29,99 € — JETZT STARTEN</a>
+    <p class="price-note">Einmalzahlung · Sofortzugang · <strong>Zertifikat inklusive</strong></p>
+  </div>
+</div>
 
-Maxi P.
- aus Koblenz hat sich gerade angemeldet
+<!-- TICKER — schnell -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot"></span><span class="name">Lena S.</span>&nbsp;aus Stuttgart hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Kevin M.</span>&nbsp;aus Görlitz hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Maxi P.</span>&nbsp;aus Koblenz hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Jonas W.</span>&nbsp;aus Hamburg hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Sarah K.</span>&nbsp;aus München hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Tim R.</span>&nbsp;aus Berlin hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Anna L.</span>&nbsp;aus Köln hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Felix B.</span>&nbsp;aus Dresden hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Marie H.</span>&nbsp;aus Frankfurt hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Nico T.</span>&nbsp;aus Düsseldorf hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Julia F.</span>&nbsp;aus Leipzig hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Marco D.</span>&nbsp;aus Hannover hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Lisa N.</span>&nbsp;aus Bremen hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Pascal G.</span>&nbsp;aus Nürnberg hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Hanna O.</span>&nbsp;aus Mannheim hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">David Z.</span>&nbsp;aus Freiburg hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Lea M.</span>&nbsp;aus Dortmund hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Tobias S.</span>&nbsp;aus Essen hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Nina W.</span>&nbsp;aus Bielefeld hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Simon A.</span>&nbsp;aus Rostock hat sich gerade angemeldet</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="ticker-item"><span class="dot"></span><span class="name">Lena S.</span>&nbsp;aus Stuttgart hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Kevin M.</span>&nbsp;aus Görlitz hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Maxi P.</span>&nbsp;aus Koblenz hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Jonas W.</span>&nbsp;aus Hamburg hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Sarah K.</span>&nbsp;aus München hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Tim R.</span>&nbsp;aus Berlin hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Anna L.</span>&nbsp;aus Köln hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Felix B.</span>&nbsp;aus Dresden hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Marie H.</span>&nbsp;aus Frankfurt hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Nico T.</span>&nbsp;aus Düsseldorf hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Julia F.</span>&nbsp;aus Leipzig hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Marco D.</span>&nbsp;aus Hannover hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Lisa N.</span>&nbsp;aus Bremen hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Pascal G.</span>&nbsp;aus Nürnberg hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Hanna O.</span>&nbsp;aus Mannheim hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">David Z.</span>&nbsp;aus Freiburg hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Lea M.</span>&nbsp;aus Dortmund hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Tobias S.</span>&nbsp;aus Essen hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Nina W.</span>&nbsp;aus Bielefeld hat sich gerade angemeldet</span>
+    <span class="ticker-item"><span class="dot"></span><span class="name">Simon A.</span>&nbsp;aus Rostock hat sich gerade angemeldet</span>
+  </div>
+</div>
 
-Jonas W.
- aus Hamburg hat sich gerade angemeldet
+<!-- KEINE ZEIT -->
+<div class="full-wrap">
+<section class="reveal" style="text-align:center;">
+  <h2>Keine Zeit für<br>endlose Kurse?</h2>
+  <div class="simple-benefits">
+    <div class="simple-benefit"><div class="sbi">🏠 Von Zuhause</div><p>Sofa, Bett, Küche — egal.</p></div>
+    <div class="simple-benefit"><div class="sbi">📱 Auf dem Handy</div><p>Kein Download, keine App.</p></div>
+    <div class="simple-benefit"><div class="sbi">⚡ 45 Minuten</div><p>Kompakt und auf den Punkt.</p></div>
+    <div class="simple-benefit"><div class="sbi">🎓 Zertifikat sofort</div><p>Nach dem Test direkt drucken.</p></div>
+  </div>
+</section>
+</div>
 
-Sarah K.
- aus München hat sich gerade angemeldet
+<!-- KURSINHALT -->
+<div class="full-wrap" style="background:rgba(255,255,255,.02);">
+<section class="reveal">
+  <div class="section-label">Was du lernst</div>
+  <h2>9 Einheiten.<br>Alles was zählt.</h2>
+  <div class="ue-list">
+    <div class="ue-item"><span class="ue-num">UE 1</span><span class="ue-title">Basismaßnahmen & Eigenschutz</span><span class="ue-check">✓</span></div>
+    <div class="ue-item"><span class="ue-num">UE 2</span><span class="ue-title">Bewusstlosigkeit & stabile Seitenlage</span><span class="ue-check">✓</span></div>
+    <div class="ue-item"><span class="ue-num">UE 3</span><span class="ue-title">Herzlungen-Wiederbelebung (HLW)</span><span class="ue-check">✓</span></div>
+    <div class="ue-item"><span class="ue-num">UE 4</span><span class="ue-title">AED — Defibrillator</span><span class="ue-check">✓</span></div>
+    <div class="ue-item"><span class="ue-num">UE 5</span><span class="ue-title">Wunden, Blutungen & Schock</span><span class="ue-check">✓</span></div>
+    <div class="ue-item"><span class="ue-num">UE 6</span><span class="ue-title">Verkehrsunfälle</span><span class="ue-check">✓</span></div>
+    <div class="ue-item"><span class="ue-num">UE 7</span><span class="ue-title">Knochenbrüche & HWS</span><span class="ue-check">✓</span></div>
+    <div class="ue-item"><span class="ue-num">UE 8</span><span class="ue-title">Verbrennungen, Vergiftungen & Strom</span><span class="ue-check">✓</span></div>
+    <div class="ue-item"><span class="ue-num">UE 9</span><span class="ue-title">Schnellwiederholung & Wissenstest</span><span class="ue-check">✓</span></div>
+  </div>
+</section>
+</div>
 
-Tim R.
- aus Berlin hat sich gerade angemeldet
+<!-- AUSBILDER -->
+<div class="full-wrap">
+<section class="ausbilder-section reveal">
+  <div class="ausbilder-stamp">
+    <img src="ERSTE_HILFE-4.png" alt="Ausbilder geprüft" onerror="this.style.display='none'">
+  </div>
+  <div class="section-label">Qualität & Vertrauen</div>
+  <h2>Ausbilder-<br>geprüft</h2>
+  <div class="credentials">
+    <div class="credential"><div class="dot"></div><span>Vorgetragen vom zertifizierten Erste-Hilfe-Ausbilder MV</span></div>
+    <div class="credential"><div class="dot"></div><span>Anerkannt nach §68 FeV durch das Landesamt für Straßenbau und Verkehr MV</span></div>
+    <div class="credential"><div class="dot"></div><span>Zugelassene Stelle zur Ausbildung in Erster Hilfe</span></div>
+    <div class="credential"><div class="dot"></div><span>Jahrelange Erfahrung in der praktischen Erste-Hilfe-Ausbildung</span></div>
+  </div>
+</section>
+</div>
 
-Anna L.
- aus Köln hat sich gerade angemeldet
+<!-- ZERTIFIKAT -->
+<div class="full-wrap" style="background:rgba(255,255,255,.02);">
+<section class="zert-section reveal">
+  <div class="section-label">Was du bekommst</div>
+  <h2>Dein Zertifikat.<br>Sofort.</h2>
+  <div class="zert-preview">
+    <h3>ZERTIFIKAT</h3>
+    <p style="color:#666;font-size:13px;">Hiermit wird bestätigt, dass</p>
+    <div class="zert-name">Max Mustermann</div>
+    <p>den Online-Kurs <strong style="color:#fff;">Erste Hilfe für Führerscheinanwärter</strong><br>erfolgreich abgeschlossen hat.</p>
+    <div class="zert-seal">🏅</div>
+    <p style="margin-top:14px;font-size:12px;color:#555;">Zertifizierter Erste-Hilfe-Ausbilder MV · §68 FeV</p>
+  </div>
+</section>
+</div>
 
-Felix B.
- aus Dresden hat sich gerade angemeldet
+<!-- PREIS -->
+<div class="full-wrap" style="background:rgba(204,0,0,.05);">
+<section class="preis-section reveal">
+  <div class="section-label">Jetzt starten</div>
+  <h2>Ein Preis.<br>Alles drin.</h2>
+  <div class="preis-box">
+    <div class="preis-amount"><sup>€</sup>29<span>,99</span></div>
+    <p class="preis-sub">Einmalzahlung · inkl. MwSt. · Sofortzugang</p>
+    <div class="includes">
+      <div class="include-item">9 Video-Lektionen (ca. 45 Min.)</div>
+      <div class="include-item">Abschlusstest mit 10 Fragen</div>
+      <div class="include-item">Zertifikat zum sofortigen Download</div>
+      <div class="include-item">Notfall-Checkliste als PDF-Bonus</div>
+      <div class="include-item">Lifetime-Zugang zu allen Inhalten</div>
+      <div class="include-item">Sichere Zahlung via Digistore24</div>
+    </div>
+    <div class="cta-box">
+      <div class="widerruf-box">
+        <label class="widerruf-label">
+          <input type="checkbox" id="cb-preis" onchange="toggleBtn('btn-preis','cb-preis','err-preis')">
+          <span>Bitte stimmen Sie unseren AGB zu: <strong>Ich möchte den Kurs sofort freischalten und mein Zertifikat sofort erhalten. Ich verzichte ausdrücklich auf mein gesetzliches Widerrufsrecht gemäß §356 Abs. 5 BGB.</strong></span>
+        </label>
+      </div>
+      <span class="btn-error" id="err-preis">⚠ Bitte erst den Text oben bestätigen.</span>
+      <a href="https://www.checkout-ds24.com/product/695257" id="btn-preis" class="btn-main" onclick="return checkBtn('cb-preis','err-preis')">NUR 29,99 € — JETZT KAUFEN</a>
+    </div>
+  </div>
+</section>
+</div>
 
-Marie H.
- aus Frankfurt hat sich gerade angemeldet
+<!-- FAQ -->
+<div class="full-wrap">
+<section class="reveal">
+  <div class="section-label">Häufige Fragen</div>
+  <h2>FAQ</h2>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q">Bekomme ich nach dem Kurs sofort mein Zertifikat?<span class="arrow">▼</span></div><div class="faq-a">Ja — sobald du alle Lektionen gesehen und den Abschlusstest mit mind. 80% bestanden hast, kannst du dein Zertifikat direkt herunterladen und ausdrucken.</div></div>
+    <div class="faq-item"><div class="faq-q">Wie lange habe ich Zugang?<span class="arrow">▼</span></div><div class="faq-a">Dauerhafter Zugang — einmal kaufen, für immer nutzen. Kein Abo, keine versteckten Kosten.</div></div>
+    <div class="faq-item"><div class="faq-q">Funktioniert der Kurs auf dem Handy?<span class="arrow">▼</span></div><div class="faq-a">Ja, vollständig mobiloptimiert. Kein App-Download nötig — läuft direkt im Browser auf jedem Gerät.</div></div>
+    <div class="faq-item"><div class="faq-q">Wie zahle ich?<span class="arrow">▼</span></div><div class="faq-a">Über Digistore24 — Kreditkarte, PayPal, SEPA, Klarna, Apple Pay oder Google Pay. 100% sicher und verschlüsselt.</div></div>
+    <div class="faq-item"><div class="faq-q">Kann ich den Kurs für den Führerschein nutzen?<span class="arrow">▼</span></div><div class="faq-a">Dieser Online-Kurs vermittelt fundiertes theoretisches Erste-Hilfe-Wissen. Er ersetzt nicht den nach §19 Abs. 1 FeV vorgeschriebenen Präsenzkurs. Das Zertifikat ist kein amtlicher Führerschein-Nachweis — bitte beachte den rechtlichen Hinweis unten.</div></div>
+    <div class="faq-item"><div class="faq-q">Kann ich den Kauf rückgängig machen?<span class="arrow">▼</span></div><div class="faq-a">Mit der Buchung stimmst du der sofortigen Ausführung zu und verzichtest ausdrücklich auf dein Widerrufsrecht gemäß §356 Abs. 5 BGB. Der Kurs wird sofort freigeschaltet.</div></div>
+  </div>
+</section>
+</div>
 
-Nico T.
- aus Düsseldorf hat sich gerade angemeldet
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">ERSTE HILFE ONLINE</div>
+  <div class="footer-links">
+    <a onclick="openModal('impressum')">Impressum</a>
+    <a onclick="openModal('datenschutz')">Datenschutz</a>
+    <a onclick="openModal('agb')">AGB</a>
+    <a onclick="openModal('widerruf')">Widerrufsbelehrung</a>
+    <a href="mailto:sebastian.roloff@gmx.de">Kontakt</a>
+  </div>
+  <div class="legal-box">
+    <strong>⚠️ Wichtiger rechtlicher Hinweis:</strong> Dieser Online-Kurs vermittelt theoretische Grundlagen der Ersten Hilfe und stellt ein Teilnahme-Zertifikat aus. Er ersetzt <strong>ausdrücklich nicht</strong> die nach <strong>§19 Abs. 1 FeV</strong> vorgeschriebene praktische Erste-Hilfe-Schulung im Präsenzformat, die für den Erwerb einer Fahrerlaubnis gesetzlich gefordert wird. Das ausgestellte Zertifikat kann <strong>nicht</strong> als Ersatz für den amtlich anerkannten Erste-Hilfe-Kurs bei Führerscheinstellen vorgelegt werden.
+  </div>
+  <p class="footer-copy">© 2026 Sebastian Roloff · Elisabethstr. 30, 18273 Güstrow · Anerkannt nach §68 FeV, Landesamt für Straßenbau und Verkehr MV</p>
+</footer>
 
-Julia F.
- aus Leipzig hat sich gerade angemeldet
+<!-- STICKY MOBILE -->
+<div class="sticky-cta">
+  <a href="#top">🚗 NUR 29,99 € — JETZT STARTEN ↑</a>
+</div>
 
-Marco D.
- aus Hannover hat sich gerade angemeldet
+<!-- MODALS -->
+<div class="modal-overlay" id="modal-impressum">
+<div class="modal-box">
+  <button class="modal-close" onclick="closeModal('impressum')">✕</button>
+  <h2>Impressum</h2>
+  <h3>Angaben gemäß §5 TMG</h3>
+  <p>Sebastian Roloff<br>Elisabethstr. 30<br>18273 Güstrow<br>Deutschland</p>
+  <h3>Kontakt</h3>
+  <p>E-Mail: <a href="mailto:sebastian.roloff@gmx.de">sebastian.roloff@gmx.de</a></p>
+  <h3>Behördliche Zulassung</h3>
+  <p>Anerkannt nach §68 FeV als Stelle für die Schulung in Erster Hilfe gemäß §19 Abs. 1 und 2 FeV durch das Landesamt für Straßenbau und Verkehr MV.</p>
+  <h3>Verantwortlich für den Inhalt</h3>
+  <p>Sebastian Roloff, Elisabethstr. 30, 18273 Güstrow</p>
+  <h3>Streitschlichtung</h3>
+  <p>EU-Plattform: <a href="https://ec.europa.eu/consumers/odr" target="_blank">ec.europa.eu/consumers/odr</a>. Wir nehmen nicht an Streitbeilegungsverfahren teil.</p>
+</div>
+</div>
 
-Lisa N.
- aus Bremen hat sich gerade angemeldet
+<div class="modal-overlay" id="modal-datenschutz">
+<div class="modal-box">
+  <button class="modal-close" onclick="closeModal('datenschutz')">✕</button>
+  <h2>Datenschutz</h2>
+  <h3>1. Verantwortlicher</h3>
+  <p>Sebastian Roloff, Elisabethstr. 30, 18273 Güstrow. E-Mail: sebastian.roloff@gmx.de</p>
+  <h3>2. Erhobene Daten</h3>
+  <p>Bei Kauf über Digistore24 werden Name, E-Mail und Zahlungsdaten durch Digistore24 GmbH verarbeitet. Wir erhalten nur die zur Kurszugangsvergabe nötigen Daten.</p>
+  <h3>3. Zweck</h3>
+  <p>Ausschließlich zur Bereitstellung des Kurses und Ausstellung des Zertifikats.</p>
+  <h3>4. Dritte</h3>
+  <p>Kursplattform: Memberspot GmbH. Zahlung: Digistore24 GmbH. Keine weitere Weitergabe.</p>
+  <h3>5. Ihre Rechte</h3>
+  <p>Auskunft, Berichtigung, Löschung, Einschränkung, Übertragbarkeit. Kontakt: sebastian.roloff@gmx.de</p>
+</div>
+</div>
 
-Pascal G.
- aus Nürnberg hat sich gerade angemeldet
+<div class="modal-overlay" id="modal-agb">
+<div class="modal-box">
+  <button class="modal-close" onclick="closeModal('agb')">✕</button>
+  <h2>AGB</h2>
+  <h3>1. Geltungsbereich</h3>
+  <p>Sebastian Roloff, Elisabethstr. 30, 18273 Güstrow.</p>
+  <h3>2. Vertragsschluss</h3>
+  <p>Vertragsschluss mit Abschluss des Bestellvorgangs auf Digistore24. Sofortzugang nach Zahlungseingang.</p>
+  <h3>3. Leistung</h3>
+  <p>9 Video-Lektionen (ca. 45 Min.), Abschlusstest, digitales Teilnahme-Zertifikat. Dauerhafter Zugang.</p>
+  <h3>4. Preis</h3>
+  <p>29,99 € inkl. 19% MwSt. Zahlung über Digistore24.</p>
+  <h3>5. Wichtiger Hinweis</h3>
+  <p>Theoretischer Erste-Hilfe-Kurs. Ersetzt nicht §19 Abs. 1 FeV Präsenzkurs. Kein amtlicher Führerschein-Nachweis.</p>
+  <h3>6. Widerrufsrecht</h3>
+  <p>Mit Bestätigung der Checkbox und Kauf stimmen Sie der sofortigen Ausführung zu und verlieren Ihr Widerrufsrecht gemäß §356 Abs. 5 BGB mit Freischaltung des Kurses.</p>
+  <h3>7. Recht</h3>
+  <p>Deutsches Recht, kein UN-Kaufrecht.</p>
+</div>
+</div>
 
-Hanna O.
- aus Mannheim hat sich gerade angemeldet
+<div class="modal-overlay" id="modal-widerruf">
+<div class="modal-box">
+  <button class="modal-close" onclick="closeModal('widerruf')">✕</button>
+  <h2>Widerrufsbelehrung</h2>
+  <h3>Widerrufsrecht</h3>
+  <p>Sie haben das Recht, binnen 14 Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.</p>
+  <h3>Erlöschen des Widerrufsrechts</h3>
+  <p>Das Widerrufsrecht erlischt bei digitalen Inhalten gemäß §356 Abs. 5 BGB, wenn mit der Ausführung begonnen wurde und Sie ausdrücklich zugestimmt haben und Ihre Kenntnis über den Verlust des Widerrufsrechts bestätigt haben. Dies erfolgt durch die Checkbox beim Kaufvorgang.</p>
+  <h3>Ausübung (soweit nicht erloschen)</h3>
+  <p>Sebastian Roloff, Elisabethstr. 30, 18273 Güstrow, E-Mail: sebastian.roloff@gmx.de</p>
+</div>
+</div>
 
-David Z.
- aus Freiburg hat sich gerade angemeldet
+<script>
+// FAQ
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
 
-Lea M.
- aus Dortmund hat sich gerade angemeldet
+// Scroll reveal
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-Tobias S.
- aus Essen hat sich gerade angemeldet
+// Modals
+function openModal(id){document.getElementById('modal-'+id).classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(id){document.getElementById('modal-'+id).classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.modal-overlay').forEach(m=>m.addEventListener('click',e=>{if(e.target===m){m.classList.remove('open');document.body.style.overflow=''}}));
 
-Nina W.
- aus Bielefeld hat sich gerade angemeldet
-
-Simon A.
- aus Rostock hat sich gerade angemeldet
-Keine Zeit für endlose Kurse?
-🏠 Von Zuhause
-Sofa, Bett, Küche — egal.
-📱 Auf dem Handy
-Kein Download, keine App.
-⚡ 45 Minuten
-Kompakt und auf den Punkt.
-🎓 Zertifikat sofort
-Nach dem Test direkt drucken.
-WAS DU LERNST
-9 Einheiten. Alles was zählt.
-UE 1
-Basismaßnahmen & Eigenschutz
-✓
-UE 2
-Bewusstlosigkeit & stabile Seitenlage
-✓
-UE 3
-Herzlungen-Wiederbelebung (HLW)
-✓
-UE 4
-AED — Defibrillator
-✓
-UE 5
-Wunden, Blutungen & Schock
-✓
-UE 6
-Verkehrsunfälle
-✓
-UE 7
-Knochenbrüche & HWS
-✓
-UE 8
-Verbrennungen, Vergiftungen & Strom
-✓
-UE 9
-Schnellwiederholung & Wissenstest
-✓
-￼
-QUALITÄT & VERTRAUEN
-Ausbilder- geprüft
-
-Vorgetragen vom zertifizierten Erste-Hilfe-Ausbilder MV
-
-Anerkannt nach §68 FeV durch das Landesamt für Straßenbau und Verkehr MV
-
-Zugelassene Stelle zur Ausbildung in Erster Hilfe
-
-Jahrelange Erfahrung in der praktischen Erste-Hilfe-Ausbildung
-WAS DU BEKOMMST
-Dein Zertifikat. Sofort.
-ZERTIFIKAT
-Hiermit wird bestätigt, dass
-Max Mustermann
-den Online-Kurs Erste Hilfe für Führerscheinanwärter erfolgreich abgeschlossen hat.
-🏅
-Zertifizierter Erste-Hilfe-Ausbilder MV · §68 FeV
-JETZT STARTEN
-Ein Preis. Alles drin.
-€29,99
-Einmalzahlung · inkl. MwSt. · Sofortzugang
-9 Video-Lektionen (ca. 45 Min.) Abschlusstest mit 10 Fragen Zertifikat zum sofortigen Download Notfall-Checkliste als PDF-Bonus Lifetime-Zugang zu allen Inhalten Sichere Zahlung via Digistore24
-
-Bitte stimmen Sie unseren AGB zu: Ich möchte den Kurs sofort freischalten und mein Zertifikat sofort erhalten. Ich verzichte ausdrücklich auf mein gesetzliches Widerrufsrecht gemäß §356 Abs. 5 BGB.
-NUR 29,99 € — JETZT KAUFEN
-HÄUFIGE FRAGEN
-FAQ
-Bekomme ich nach dem Kurs sofort mein Zertifikat?
-▼
-Ja — sobald du alle Lektionen gesehen und den Abschlusstest mit mind. 80% bestanden hast, kannst du dein Zertifikat direkt herunterladen und ausdrucken.
-Wie lange habe ich Zugang?
-▼
-Dauerhafter Zugang — einmal kaufen, für immer nutzen. Kein Abo, keine versteckten Kosten.
-Funktioniert der Kurs auf dem Handy?
-▼
-Ja, vollständig mobiloptimiert. Kein App-Download nötig — läuft direkt im Browser auf jedem Gerät.
-Wie zahle ich?
-▼
-Über Digistore24 — Kreditkarte, PayPal, SEPA, Klarna, Apple Pay oder Google Pay. 100% sicher und verschlüsselt.
-Kann ich den Kurs für den Führerschein nutzen?
-▼
-Dieser Online-Kurs vermittelt fundiertes theoretisches Erste-Hilfe-Wissen. Er ersetzt nicht den nach §19 Abs. 1 FeV vorgeschriebenen Präsenzkurs. Das Zertifikat ist kein amtlicher Führerschein-Nachweis — bitte beachte den rechtlichen Hinweis unten.
-Kann ich den Kauf rückgängig machen?
-▼
-Mit der Buchung stimmst du der sofortigen Ausführung zu und verzichtest ausdrücklich auf dein Widerrufsrecht gemäß §356 Abs. 5 BGB. Der Kurs wird sofort freigeschaltet.
-ERSTE HILFE ONLINE
-Impressum
-Datenschutz
-AGB
-Widerrufsbelehrung
-Kontakt
-⚠️ Wichtiger rechtlicher Hinweis: Dieser Online-Kurs vermittelt theoretische Grundlagen der Ersten Hilfe und stellt ein Teilnahme-Zertifikat aus. Er ersetzt ausdrücklich nicht die nach §19 Abs. 1 FeV vorgeschriebene praktische Erste-Hilfe-Schulung im Präsenzformat, die für den Erwerb einer Fahrerlaubnis gesetzlich gefordert wird. Das ausgestellte Zertifikat kann nicht als Ersatz für den amtlich anerkannten Erste-Hilfe-Kurs bei Führerscheinstellen vorgelegt werden.
-© 2026 Sebastian Roloff · Elisabethstr. 30, 18273 Güstrow · Anerkannt nach §68 FeV, Landesamt für Straßenbau und Verkehr MV
+// Checkbox → Button
+function toggleBtn(btnId,cbId,errId){
+  const cb=document.getElementById(cbId),btn=document.getElementById(btnId),err=document.getElementById(errId);
+  if(cb.checked){btn.classList.add('active');err.style.display='none';}
+  else{btn.classList.remove('active');}
+}
+function checkBtn(cbId,errId){
+  const cb=document.getElementById(cbId),err=document.getElementById(errId);
+  if(!cb.checked){err.style.display='block';return false;}
+  return true;
+}
+</script>
+</body>
+</html>
