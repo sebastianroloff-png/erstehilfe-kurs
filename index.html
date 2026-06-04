@@ -14,14 +14,14 @@
   gtag('config', 'AW-16549603293');
 </script><!-- Google Ads Conversion - Kauf -->
 <script>
-function gtag_report_conversion(url) {
+function gtag_report_conversion() {
   gtag('event', 'conversion', {
-    'send_to': 'send_to': 'AW-16549683293/4CJPCOJOObMoEN3PuWM9',
+    'send_to': 'AW-16549683293/4CJPCOJOObMoEN3PuWM9',
     'value': 29.99,
     'currency': 'EUR',
     'transaction_id': ''
   });
-  return false;
+  return true;
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,23 +96,41 @@ body{font-family:'DM Sans',sans-serif;background:var(--schwarz);color:var(--weis
   accent-color:var(--rot);cursor:pointer;
 }
 .widerruf-label span strong{color:var(--weiss);}
-.widerruf-hint{font-size:11px;color:#555;margin-top:6px;padding-left:32px;}
+.widerruf-hint{font-size:12px;color:#999;margin-top:8px;padding-left:32px;font-style:italic;}
 
 .btn-main{
-  display:block;width:100%;background:#3a3a3a;color:#777;
-  font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2px;
-  padding:20px 48px;border-radius:8px;text-decoration:none;text-align:center;
-  transition:all .3s;border:none;cursor:not-allowed;position:relative;overflow:hidden;
+  display:block;width:100%;background:#3a3a3a;color:#aaa;
+  font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;
+  padding:20px 24px;border-radius:8px;text-decoration:none;text-align:center;
+  transition:background .3s,color .3s,box-shadow .3s;
+  border:2px dashed #555;cursor:not-allowed;position:relative;overflow:hidden;
+  animation:btnPreview 3s ease-in-out infinite;
 }
 .btn-main.active{
   background:var(--rot);color:var(--weiss);cursor:pointer;
+  border:2px solid var(--rot);font-size:24px;letter-spacing:2px;
   box-shadow:0 8px 32px rgba(204,0,0,.5);
+  animation:none;
 }
 .btn-main.active:hover{transform:translateY(-3px) scale(1.02);background:#e00;}
 .btn-main.active::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.12) 0%,transparent 60%);}
 .btn-error{font-size:12px;color:var(--rot);display:none;font-weight:700;text-align:center;}
 .price-note{font-size:13px;color:#888;text-align:center;}
 .price-note strong{color:var(--gold);font-size:18px;}
+/* Checkbox attention hint */
+.cb-attention{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:rgba(201,162,39,.12);border:1px solid rgba(201,162,39,.35);
+  border-radius:8px;padding:10px 14px;margin-bottom:8px;
+  font-size:13px;font-weight:700;color:var(--gold);
+  animation:blink 1.8s ease-in-out infinite;
+}
+.cb-attention.hidden{display:none;}
+@keyframes btnPreview{
+  0%,45%{background:#3a3a3a;color:#aaa;border-color:#555;font-size:20px;letter-spacing:1px;}
+  50%,95%{background:var(--rot);color:var(--weiss);border-color:var(--rot);font-size:22px;letter-spacing:2px;box-shadow:0 8px 32px rgba(204,0,0,.5);}
+  100%{background:#3a3a3a;color:#aaa;border-color:#555;font-size:20px;letter-spacing:1px;}
+}
 
 /* TICKER — schneller */
 .ticker-wrap{
@@ -274,15 +292,16 @@ h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,7vw,64px);line-heigh
   </div>
 
   <div class="cta-wrap">
+    <div id="hint-hero" class="cb-attention">☝️ Bitte Häkchen setzen — dann wird der Kaufbutton aktiv</div>
     <div class="widerruf-box">
       <label class="widerruf-label">
-        <input type="checkbox" id="cb-hero" onchange="toggleBtn('btn-hero','cb-hero','err-hero')">
+        <input type="checkbox" id="cb-hero" onchange="toggleBtn('btn-hero','cb-hero','err-hero','hint-hero')">
         <span>Bitte stimmen Sie unseren AGB zu: <strong>Ich möchte den Kurs sofort freischalten und mein Zertifikat sofort im Anschluss erhalten. Ich verzichte ausdrücklich auf mein gesetzliches Widerrufsrecht gemäß §356 Abs. 5 BGB.</strong></span>
       </label>
       <p class="widerruf-hint">Erst nach Bestätigung wird der Kaufbutton aktiv.</p>
     </div>
     <span class="btn-error" id="err-hero">⚠ Bitte erst den Text oben bestätigen.</span>
-    <a href="https://copecart.com/products/db0fb9b3/checkout" id="btn-hero" class="btn-main" onclick="return checkBtn('cb-hero','err-hero')">NUR 29,99 € — JETZT STARTEN</a>
+    <a href="https://copecart.com/products/db0fb9b3/checkout" id="btn-hero" class="btn-main" onclick="return checkBtn('cb-hero','err-hero')">☝ ERST HÄKCHEN SETZEN</a>
     <p class="price-note">Einmalzahlung · Sofortzugang · <strong>Zertifikat inklusive</strong></p>
   </div>
 </div>
@@ -416,14 +435,15 @@ h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,7vw,64px);line-heigh
       <div class="include-item">Sichere Zahlung via CopeCart</div>
     </div>
     <div class="cta-box">
+      <div id="hint-preis" class="cb-attention">☝️ Bitte Häkchen setzen — dann wird der Kaufbutton aktiv</div>
       <div class="widerruf-box">
         <label class="widerruf-label">
-          <input type="checkbox" id="cb-preis" onchange="toggleBtn('btn-preis','cb-preis','err-preis')">
+          <input type="checkbox" id="cb-preis" onchange="toggleBtn('btn-preis','cb-preis','err-preis','hint-preis')">
           <span>Bitte stimmen Sie unseren AGB zu: <strong>Ich möchte den Kurs sofort freischalten und mein Zertifikat sofort erhalten. Ich verzichte ausdrücklich auf mein gesetzliches Widerrufsrecht gemäß §356 Abs. 5 BGB.</strong></span>
         </label>
       </div>
       <span class="btn-error" id="err-preis">⚠ Bitte erst den Text oben bestätigen.</span>
-      <a href="https://copecart.com/products/db0fb9b3/checkout" id="btn-preis" class="btn-main" onclick="gtag_report_conversion(); return checkBtn('cb-preis','err-preis')"> 29,99 € — JETZT KAUFEN</a>
+      <a href="https://copecart.com/products/db0fb9b3/checkout" id="btn-preis" class="btn-main" onclick="gtag_report_conversion(); return checkBtn('cb-preis','err-preis')">☝ ERST HÄKCHEN SETZEN</a>
     </div>
   </div>
 </section>
@@ -549,11 +569,38 @@ function openModal(id){document.getElementById('modal-'+id).classList.add('open'
 function closeModal(id){document.getElementById('modal-'+id).classList.remove('open');document.body.style.overflow='';}
 document.querySelectorAll('.modal-overlay').forEach(m=>m.addEventListener('click',e=>{if(e.target===m){m.classList.remove('open');document.body.style.overflow=''}}));
 
+// Button text preview cycle (shows what happens after checkbox)
+function startBtnPreview(btnId){
+  const btn=document.getElementById(btnId);
+  if(!btn||btn.classList.contains('active'))return;
+  const texts=['☝ ERST HÄKCHEN SETZEN','NUR 29,99 € — JETZT STARTEN'];
+  let i=0;
+  btn._previewInterval=setInterval(()=>{
+    if(btn.classList.contains('active')){clearInterval(btn._previewInterval);return;}
+    i=(i+1)%2;
+    btn.textContent=texts[i];
+  },1500);
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  ['btn-hero','btn-preis'].forEach(id=>startBtnPreview(id));
+});
+
 // Checkbox → Button
-function toggleBtn(btnId,cbId,errId){
+function toggleBtn(btnId,cbId,errId,hintId){
   const cb=document.getElementById(cbId),btn=document.getElementById(btnId),err=document.getElementById(errId);
-  if(cb.checked){btn.classList.add('active');err.style.display='none';}
-  else{btn.classList.remove('active');}
+  const hint=hintId?document.getElementById(hintId):null;
+  if(cb.checked){
+    btn.classList.add('active');
+    if(btn._previewInterval){clearInterval(btn._previewInterval);}
+    btn.textContent='NUR 29,99 € — JETZT STARTEN';
+    err.style.display='none';
+    if(hint)hint.classList.add('hidden');
+  } else {
+    btn.classList.remove('active');
+    btn.textContent='☝ ERST HÄKCHEN SETZEN';
+    if(hint)hint.classList.remove('hidden');
+    startBtnPreview(btnId);
+  }
 }
 function checkBtn(cbId,errId){
   const cb=document.getElementById(cbId),err=document.getElementById(errId);
@@ -562,16 +609,5 @@ function checkBtn(cbId,errId){
 }
 </script>
 
-  <script>
-function gtag_report_conversion(url) {
-  gtag('event', 'conversion', {
-    'send_to': 'AW-16549603293/kaufen',
-    'value': 29.99,
-    'currency': 'EUR',
-    'transaction_id': ''
-  });
-  return false;
-}
-</script>
 </body>
 </html>
