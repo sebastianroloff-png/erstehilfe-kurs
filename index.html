@@ -279,7 +279,7 @@ function gtag_report_conversion() {
   </div>
 
   <div class="cta-block">
-    <a href="#" class="buy-btn" id="buyBtnTop" data-locked="true">Jetzt Kurs starten</a>
+    <a href="https://copecart.com/products/db0fb9b3/checkout" class="buy-btn" id="buyBtnTop" data-locked="true">Jetzt Kurs starten</a>
     <label class="consent-line">
       <input type="checkbox" class="consentCheck">
       <span>Ich möchte den Kurs sofort freischalten und mein Zertifikat direkt im Anschluss erhalten. Mir ist bewusst, dass ich damit mein gesetzliches Widerrufsrecht gemäß §356 Abs. 5 BGB verliere.</span>
@@ -474,7 +474,7 @@ function gtag_report_conversion() {
   buyBtns.forEach(btn=>{
     if(!btn) return;
     btn.addEventListener('click', (e)=>{
-      if(btn.id === 'buyBtnMain' && typeof gtag_report_conversion === 'function'){
+      if((btn.id === 'buyBtnMain' || btn.id === 'buyBtnTop') && typeof gtag_report_conversion === 'function'){  
         gtag_report_conversion();
       }
       if(btn.dataset.locked === "true"){
