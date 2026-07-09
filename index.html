@@ -128,7 +128,28 @@ function gtag_report_conversion() {
     font-size:12.5px;color:var(--ink-soft);text-align:left;
   }
   .consent-line input{margin-top:3px;flex:0 0 auto;width:16px;height:16px;accent-color:var(--red);}
+  .consent-line strong{color:var(--ink);font-weight:700;}
+  .consent-fine{display:block;margin-top:3px;opacity:.72;font-size:11.5px;}
   .fineprint{font-size:12.5px;color:var(--ink-soft);margin-top:2px;}
+
+  /* ---- Cookie-Consent-Banner (Marketing/Meta-Pixel) ---- */
+  .cookie-banner{
+    position:fixed;left:16px;right:16px;bottom:16px;z-index:200;
+    max-width:520px;margin:0 auto;
+    background:var(--ink);color:#fff;border-radius:16px;
+    padding:20px 22px;box-shadow:0 20px 50px -15px rgba(0,0,0,.5);
+    display:none;
+  }
+  .cookie-banner.active{display:block;}
+  .cookie-banner p{font-size:13px;color:#d8d9db;line-height:1.55;margin-bottom:14px;}
+  .cookie-banner .cb-actions{display:flex;gap:10px;flex-wrap:wrap;}
+  .cookie-banner button{
+    font:inherit;font-size:13px;font-weight:700;border-radius:999px;padding:9px 18px;
+    cursor:pointer;border:1px solid rgba(255,255,255,.25);
+  }
+  .cb-accept{background:var(--red);color:#fff;border-color:var(--red);}
+  .cb-decline{background:transparent;color:#fff;}
+  @media (max-width:600px){.cookie-banner{bottom:88px;}}
 
   /* ---- Feature grid ---- */
   .feature-grid{
@@ -261,13 +282,6 @@ function gtag_report_conversion() {
 </div>
 
 <header class="hero wrap">
-  <div class="eyebrow-row">
-    <span class="eyebrow">🚗 Auto / Verkehr</span>
-    <span class="eyebrow">🩺 Ersthelfer</span>
-    <span class="eyebrow">🏃 Übungsleiter</span>
-    <span class="eyebrow">📚 Lehrer</span>
-    <span class="eyebrow">💊 Pflegepersonal</span>
-  </div>
   <h1>Erste Hilfe.<br><span class="accent">Online.</span></h1>
   <p class="sub">Fundiertes Erste-Hilfe-Grundwissen in 45 Minuten — ausgebildet vom geprüften Erste-Hilfe-Ausbilder, jederzeit auf dem Handy.</p>
 
@@ -282,7 +296,7 @@ function gtag_report_conversion() {
     <a href="https://copecart.com/products/db0fb9b3/checkout" class="buy-btn" id="buyBtnTop" data-locked="true">Jetzt Kurs starten</a>
     <label class="consent-line">
       <input type="checkbox" class="consentCheck">
-      <span>Ich möchte den Kurs sofort freischalten und mein Zertifikat direkt im Anschluss erhalten. Mir ist bewusst, dass ich damit mein gesetzliches Widerrufsrecht gemäß §356 Abs. 5 BGB verliere.</span>
+      <span><strong>Ja, ich will sofort starten</strong> — Kurs jetzt freischalten und Zertifikat direkt im Anschluss erhalten.<span class="consent-fine">Mit der Freischaltung verzichte ich ausdrücklich auf mein Widerrufsrecht gemäß §356 Abs. 5 BGB.</span></span>
     </label>
   </div>
 </header>
@@ -349,7 +363,7 @@ function gtag_report_conversion() {
     <a href="https://copecart.com/products/db0fb9b3/checkout" target="_blank" rel="noopener" class="buy-btn" id="buyBtnMain" data-locked="true" style="width:100%;">Jetzt Kurs starten</a>
     <label class="consent-line" style="margin-top:16px;justify-content:center;">
       <input type="checkbox" class="consentCheck">
-      <span>Ich möchte den Kurs sofort freischalten und verzichte damit ausdrücklich auf mein Widerrufsrecht gemäß §356 Abs. 5 BGB.</span>
+      <span><strong>Ja, ich will sofort starten</strong><span class="consent-fine">Mit der Freischaltung verzichte ich ausdrücklich auf mein Widerrufsrecht gemäß §356 Abs. 5 BGB.</span></span>
     </label>
   </div>
 </section>
@@ -394,6 +408,7 @@ function gtag_report_conversion() {
       <button onclick="openModal('datenschutz')">Datenschutz</button>
       <button onclick="openModal('agb')">AGB</button>
       <button onclick="openModal('widerruf')">Widerrufsbelehrung</button>
+      <button onclick="document.getElementById('cookieBanner').classList.add('active')">Cookie-Einstellungen</button>
       <a href="mailto:sebastian.roloff@gmx.de">Kontakt</a>
     </div>
     <p class="legal-note"><b>Wichtiger rechtlicher Hinweis:</b> Dieser Online-Kurs vermittelt theoretische Grundlagen der Ersten Hilfe und stellt ein Teilnahme-Zertifikat aus. Er ersetzt ausdrücklich nicht die nach §19 Abs. 1 FeV vorgeschriebene praktische Erste-Hilfe-Schulung im Präsenzformat für den Erwerb einer Fahrerlaubnis. Das Zertifikat kann nicht als Ersatz bei Führerscheinstellen vorgelegt werden.</p>
@@ -404,6 +419,14 @@ function gtag_report_conversion() {
 <div class="sticky-cta">
   <div style="font-size:13px;font-weight:700;">29,99 € · Sofortzugang</div>
   <a href="#kaufen" class="buy-btn" data-locked="false">Jetzt starten</a>
+</div>
+
+<div class="cookie-banner" id="cookieBanner">
+  <p>Wir nutzen mit deiner Zustimmung ein Marketing-Cookie (Meta/Facebook), um zu verstehen, wie diese Seite genutzt wird, und um passende Werbung auszuspielen. Ohne Zustimmung wird kein Marketing-Cookie gesetzt. <button onclick="openModal('datenschutz')" style="background:none;border:none;color:#fff;text-decoration:underline;cursor:pointer;font:inherit;padding:0;">Mehr in der Datenschutzerklärung</button>.</p>
+  <div class="cb-actions">
+    <button class="cb-accept" onclick="setCookieConsent(true)">Akzeptieren</button>
+    <button class="cb-decline" onclick="setCookieConsent(false)">Ablehnen</button>
+  </div>
 </div>
 
 <!-- Modals -->
@@ -474,8 +497,11 @@ function gtag_report_conversion() {
   buyBtns.forEach(btn=>{
     if(!btn) return;
     btn.addEventListener('click', (e)=>{
-      if((btn.id === 'buyBtnMain' || btn.id === 'buyBtnTop') && typeof gtag_report_conversion === 'function'){  
+      if((btn.id === 'buyBtnMain' || btn.id === 'buyBtnTop') && typeof gtag_report_conversion === 'function'){
         gtag_report_conversion();
+      }
+      if((btn.id === 'buyBtnMain' || btn.id === 'buyBtnTop') && window.fbq){
+        fbq('track', 'InitiateCheckout', {value: 29.99, currency: 'EUR'});
       }
       if(btn.dataset.locked === "true"){
         e.preventDefault();
@@ -507,6 +533,36 @@ function gtag_report_conversion() {
   document.querySelectorAll('.modal-overlay').forEach(ov=>{
     ov.addEventListener('click', (e)=>{ if(e.target === ov) ov.classList.remove('active'); });
   });
+
+  // ---- Cookie-Consent + Meta-Pixel (nur nach Zustimmung) ----
+  const COOKIE_KEY = 'marketing_consent';
+
+  function loadMetaPixel(){
+    if(window.fbq) return; // schon geladen
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '770972492740434');
+    fbq('track', 'PageView');
+  }
+
+  function setCookieConsent(granted){
+    localStorage.setItem(COOKIE_KEY, granted ? 'granted' : 'denied');
+    document.getElementById('cookieBanner').classList.remove('active');
+    if(granted) loadMetaPixel();
+  }
+
+  (function initConsentBanner(){
+    const stored = localStorage.getItem(COOKIE_KEY);
+    if(stored === 'granted'){
+      loadMetaPixel();
+    } else if(stored === null){
+      document.getElementById('cookieBanner').classList.add('active');
+    }
+    // stored === 'denied' → Banner bleibt zu, kein Pixel
+  })();
 </script>
 
 </body>
