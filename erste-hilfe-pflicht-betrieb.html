@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erste-Hilfe-Pflicht im Betrieb — DGUV Vorschrift 1 einfach erklärt</title>
+<meta name="description" content="Wie viele Ersthelfer ein Betrieb braucht, wie oft aufgefrischt werden muss und wo ein Online-Kurs sinnvoll ergänzt.">
+<link rel="canonical" href="https://112onlinekurs.de/erste-hilfe-pflicht-betrieb.html">
+<!-- Google Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16549603293"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-16549603293');
+</script>
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#15171a;
+    --ink-soft:#54585e;
+    --line:#e7e8ea;
+    --panel:#f7f7f8;
+    --red:#e2001a;
+    --red-dark:#b30014;
+    --red-tint:#fdecee;
+    --radius:14px;
+    --maxw:1080px;
+    --shadow:0 20px 50px -25px rgba(20,20,20,.25);
+    font-size:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  section{padding:72px 0;}
+  h1,h2,h3{margin:0;letter-spacing:-0.02em;font-weight:700;}
+  p{margin:0;}
+
+  /* ---- Top bar ---- */
+  .topbar{
+    position:sticky;top:0;z-index:40;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;}
+  .brand .mark{
+    width:30px;height:30px;border-radius:8px;background:var(--red);
+    display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;
+  }
+  .topbar .price-pill{
+    font-size:13px;font-weight:700;color:var(--red);border:1px solid var(--red-tint);
+    background:var(--red-tint);padding:6px 12px;border-radius:999px;
+  }
+
+  /* ---- Hero ---- */
+  .hero{padding:56px 0 40px;text-align:center;}
+  .eyebrow-row{
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:28px;
+  }
+  .eyebrow{
+    font-size:12.5px;font-weight:600;color:var(--ink-soft);
+    background:var(--panel);border:1px solid var(--line);
+    padding:6px 12px;border-radius:999px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem,6vw,4.2rem);
+    line-height:1.02;
+  }
+  .hero h1 .accent{color:var(--red);}
+  .hero .sub{
+    margin:22px auto 0;max-width:560px;
+    font-size:18px;color:var(--ink-soft);
+  }
+  .stat-row{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-top:36px;
+  }
+  .stat{font-size:14px;font-weight:600;color:var(--ink);}
+  .stat span{display:block;font-size:22px;font-weight:800;color:var(--red);}
+
+  .cta-block{margin-top:40px;display:flex;flex-direction:column;align-items:center;gap:14px;}
+
+  /* ---- Buy button with glow pulse ---- */
+  .buy-btn{
+    appearance:none;border:none;cursor:pointer;
+    background:var(--red);
+    color:#fff;font-weight:700;font-size:17px;
+    padding:17px 38px;border-radius:999px;
+    letter-spacing:.01em;
+    text-decoration:none;display:inline-block;
+    transition:transform .15s ease, filter .15s ease;
+    box-shadow:0 0 0 0 rgba(226,0,26,.55);
+    animation:pulseGlow 2.6s ease-in-out infinite;
+  }
+  .buy-btn:hover{transform:translateY(-1px);filter:brightness(1.05);}
+  .buy-btn[data-locked="true"]{
+    background:#d8d9db;color:#8b8e93;cursor:not-allowed;
+    animation:none;box-shadow:none;
+  }
+  @keyframes pulseGlow{
+    0%{box-shadow:0 0 0 0 rgba(226,0,26,.45);}
+    50%{box-shadow:0 0 0 14px rgba(226,0,26,0);}
+    100%{box-shadow:0 0 0 0 rgba(226,0,26,0);}
+  }
+  .consent-line{
+    display:flex;align-items:flex-start;gap:8px;max-width:480px;
+    font-size:12.5px;color:var(--ink-soft);text-align:left;
+  }
+  .consent-line input{margin-top:3px;flex:0 0 auto;width:16px;height:16px;accent-color:var(--red);}
+  .consent-line strong{color:var(--ink);font-weight:700;}
+  .consent-fine{display:block;margin-top:3px;opacity:.72;font-size:11.5px;}
+  .fineprint{font-size:12.5px;color:var(--ink-soft);margin-top:2px;}
+
+  /* ---- Cookie-Consent-Banner (Marketing/Meta-Pixel) ---- */
+  .cookie-banner{
+    position:fixed;left:16px;right:16px;bottom:16px;z-index:200;
+    max-width:520px;margin:0 auto;
+    background:var(--ink);color:#fff;border-radius:16px;
+    padding:20px 22px;box-shadow:0 20px 50px -15px rgba(0,0,0,.5);
+    display:none;
+  }
+  .cookie-banner.active{display:block;}
+  .cookie-banner p{font-size:13px;color:#d8d9db;line-height:1.55;margin-bottom:14px;}
+  .cookie-banner .cb-actions{display:flex;gap:10px;flex-wrap:wrap;}
+  .cookie-banner button{
+    font:inherit;font-size:13px;font-weight:700;border-radius:999px;padding:9px 18px;
+    cursor:pointer;border:1px solid rgba(255,255,255,.25);
+  }
+  .cb-accept{background:var(--red);color:#fff;border-color:var(--red);}
+  .cb-decline{background:transparent;color:#fff;}
+  @media (max-width:600px){.cookie-banner{bottom:88px;}}
+
+  /* ---- Feature grid ---- */
+  .feature-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:8px;
+  }
+  .feature-grid.cols-3{grid-template-columns:repeat(3,1fr);max-width:900px;margin-left:auto;margin-right:auto;}
+  .feature-grid a.feature{text-decoration:none;color:inherit;display:block;}
+  .feature{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 20px;text-align:left;
+  }
+  .feature .ico{font-size:22px;margin-bottom:10px;}
+  .feature h3{font-size:15px;}
+  .feature p{margin-top:6px;font-size:13.5px;color:var(--ink-soft);}
+
+  /* ---- Section heading ---- */
+  .kicker{font-size:13px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+  .section-head{max-width:640px;margin-bottom:36px;}
+  .section-head h2{font-size:clamp(1.7rem,3.2vw,2.4rem);}
+
+  .stack-head{max-width:640px;margin:0 auto 40px;text-align:center;}
+  .stack-head .line{
+    display:block;font-size:clamp(1.7rem,3.2vw,2.4rem);
+    font-weight:700;letter-spacing:-0.02em;line-height:1.16;
+  }
+  .stack-head .line.red{color:var(--red);}
+  .stack-head .line.black{color:var(--ink);}
+
+  /* ---- Curriculum ---- */
+  .curr-list{
+    border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  }
+  .curr-row{
+    display:flex;align-items:center;gap:16px;
+    padding:16px 20px;border-bottom:1px solid var(--line);
+    font-size:15px;
+  }
+  .curr-row:last-child{border-bottom:none;}
+  .curr-num{
+    flex:0 0 auto;width:30px;height:30px;border-radius:8px;background:var(--panel);
+    display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--ink-soft);
+  }
+  .curr-row .check{margin-left:auto;color:var(--red);font-weight:800;}
+
+  /* ---- Trust block ---- */
+  .trust{
+    background:var(--ink);color:#fff;border-radius:20px;
+    padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;
+  }
+  .trust h2{color:#fff;font-size:1.9rem;}
+  .trust ul{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .trust li{font-size:14.5px;color:#d8d9db;display:flex;gap:10px;}
+  .trust li b{color:#fff;}
+  .trust .num{color:var(--red);font-weight:800;}
+  .trust .lead{font-size:17px;color:#fff;font-weight:600;line-height:1.4;}
+
+  /* ---- Pricing ---- */
+  .price-card{
+    max-width:520px;margin:0 auto;border:1px solid var(--line);border-radius:20px;
+    padding:40px;text-align:center;box-shadow:var(--shadow);
+  }
+  .price-num{font-size:3rem;font-weight:800;}
+  .price-sub{font-size:13.5px;color:var(--ink-soft);margin-top:4px;}
+  .price-list{list-style:none;margin:28px 0;padding:0;text-align:left;display:flex;flex-direction:column;gap:12px;}
+  .price-list li{font-size:14.5px;display:flex;gap:10px;}
+  .price-list li:before{content:"✓";color:var(--red);font-weight:800;}
+
+  /* ---- FAQ ---- */
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%;text-align:left;background:none;border:none;cursor:pointer;
+    padding:20px 0;font-size:16px;font-weight:600;display:flex;justify-content:space-between;align-items:center;
+    color:var(--ink);
+  }
+  .faq-q .arrow{transition:transform .2s ease;color:var(--red);}
+  .faq-item.open .arrow{transform:rotate(180deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;font-size:14.5px;color:var(--ink-soft);}
+  .faq-a p{padding-bottom:20px;}
+
+  /* ---- Footer ---- */
+  footer{border-top:1px solid var(--line);padding:40px 0;text-align:center;}
+  .foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;font-size:13px;color:var(--ink-soft);margin-bottom:16px;}
+  .foot-links button{background:none;border:none;cursor:pointer;font:inherit;color:inherit;padding:0;text-decoration:underline;}
+  .legal-note{max-width:640px;margin:0 auto 16px;font-size:12px;color:var(--ink-soft);}
+  .copyright{font-size:12px;color:#9a9da2;}
+
+  /* ---- Modal ---- */
+  .modal-overlay{
+    position:fixed;inset:0;background:rgba(15,15,15,.5);display:none;
+    align-items:center;justify-content:center;z-index:100;padding:20px;
+  }
+  .modal-overlay.active{display:flex;}
+  .modal{
+    background:#fff;border-radius:16px;max-width:560px;width:100%;max-height:80vh;overflow-y:auto;
+    padding:32px;position:relative;
+  }
+  .modal h2{font-size:1.4rem;margin-bottom:16px;}
+  .modal h3{font-size:14px;margin:18px 0 6px;}
+  .modal p{font-size:14px;color:var(--ink-soft);margin-bottom:4px;}
+  .modal-close{
+    position:absolute;top:16px;right:16px;background:var(--panel);border:none;
+    width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;
+  }
+
+  /* ---- Sticky mobile CTA ---- */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:50;
+    background:rgba(255,255,255,.95);backdrop-filter:blur(8px);
+    border-top:1px solid var(--line);
+    padding:12px 20px;display:none;align-items:center;justify-content:space-between;gap:12px;
+  }
+  .sticky-cta .buy-btn{padding:12px 24px;font-size:15px;flex:0 0 auto;}
+
+
+  /* ---- Badge (Ausbilder geprüft Siegel) ---- */
+  .seal-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:24px;flex-wrap:wrap;}
+  .seal-badge{display:flex;align-items:center;gap:12px;}
+  .seal-badge svg{width:56px;height:56px;flex:0 0 auto;}
+  .seal-badge .seal-text{text-align:left;line-height:1.25;}
+  .seal-badge .seal-text .l1{display:block;font-size:13px;font-weight:800;color:var(--red);letter-spacing:.02em;}
+  .seal-badge .seal-text .l2{display:block;font-size:11.5px;font-weight:600;color:var(--ink-soft);}
+
+  @media (max-width:860px){
+    .feature-grid{grid-template-columns:repeat(2,1fr);}
+    .trust{grid-template-columns:1fr;padding:32px;}
+  }
+  @media (max-width:600px){
+    section{padding:52px 0;}
+    .sticky-cta{display:flex;}
+    body{padding-bottom:76px;}
+  }
+
+  /* ---- Article page extras ---- */
+  .article-wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+  .breadcrumb{font-size:13px;color:var(--ink-soft);margin-bottom:18px;}
+  .breadcrumb a{color:var(--red);text-decoration:none;font-weight:600;}
+  .article-hero{padding:48px 0 8px;text-align:left;}
+  .article-hero h1{font-size:clamp(1.9rem,4.6vw,2.8rem);line-height:1.08;}
+  .article-meta{margin-top:14px;font-size:13.5px;color:var(--ink-soft);}
+  .article-body{padding:24px 0 8px;font-size:16px;color:var(--ink);}
+  .article-body h2{font-size:1.35rem;margin-top:36px;margin-bottom:12px;letter-spacing:-0.01em;}
+  .article-body p{margin-bottom:16px;color:var(--ink-soft);line-height:1.7;}
+  .article-body ul{margin:0 0 16px;padding-left:20px;color:var(--ink-soft);line-height:1.7;}
+  .article-body li{margin-bottom:6px;}
+  .article-cta{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px;margin:32px 0;text-align:center;
+  }
+  .article-cta h3{font-size:1.15rem;margin-bottom:8px;}
+  .article-cta p{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  .back-home{display:inline-block;margin:24px 0 40px;font-size:14px;color:var(--red);text-decoration:none;font-weight:600;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html" class="brand" style="text-decoration:none;"><span class="mark">112</span> Erste Hilfe Online</a>
+    <a href="index.html#kaufen" class="price-pill" style="text-decoration:none;">29,99 € · Einmalzahlung</a>
+  </div>
+</div>
+
+<div class="article-wrap">
+  <div class="breadcrumb" style="margin-top:20px;"><a href="index.html">Startseite</a> / Ratgeber</div>
+  <header class="article-hero">
+    <h1>Erste-Hilfe-Pflicht im Betrieb</h1>
+    <p class="article-meta">Erste-Hilfe-Ausbilder-Ratgeber · Zuletzt aktualisiert 2026</p>
+  </header>
+  <div class="article-body">
+
+    <p>Jeder Betrieb in Deutschland ist gesetzlich verpflichtet, eine Mindestanzahl an Ersthelfern zu stellen — geregelt in der DGUV Vorschrift 1. Wie viele genau, hängt von der Beschäftigtenzahl und Branche ab.</p>
+
+    <h2>Wie viele Ersthelfer braucht mein Betrieb?</h2>
+    <ul>
+      <li>Verwaltungs- und Handelsbetriebe: 5% der Beschäftigten bei 2-20 Mitarbeitern, sonst 10%</li>
+      <li>Sonstige Betriebe (Produktion, Handwerk etc.): 10% bei 2-20 Mitarbeitern, sonst ebenfalls 10%</li>
+      <li>Mindestens ein Ersthelfer muss immer während der Arbeitszeit anwesend sein</li>
+    </ul>
+
+    <h2>Wie oft muss aufgefrischt werden?</h2>
+    <p>Die Ausbildung zum betrieblichen Ersthelfer muss alle zwei Jahre wiederholt werden (Fortbildung, 9 Unterrichtseinheiten). Auch hier gilt: der praktische Teil findet in Präsenz bei einer ermächtigten Stelle statt.</p>
+
+    <h2>Wo ein Online-Kurs sinnvoll ergänzt</h2>
+    <p>Zwischen den offiziellen Zwei-Jahres-Intervallen verblasst Wissen schneller, als man denkt — Studien zur Wiederbelebung zeigen messbare Wissensverluste schon nach wenigen Monaten. Ein kurzer Online-Auffrischer zwischendurch (ohne den Betrieb für einen ganzen Tag lahmzulegen) hält das Team sicherer, ohne die Pflichtfortbildung zu ersetzen. Unser <a href="index.html#kaufen" style="color:var(--red);font-weight:600;">45-Minuten-Kurs</a> eignet sich genau dafür: einzeln am Arbeitsplatz oder zu Hause durchführbar, mit Zertifikat für die Personalakte.</p>
+
+    <h2>Praktischer Tipp für Arbeitgeber</h2>
+    <p>Plane die Pflichtfortbildung alle zwei Jahre fest ein und nutze die Zeit dazwischen für kurze Auffrischungen — das hält die tatsächliche Handlungssicherheit im Team höher, als es die reine Zwei-Jahres-Pflicht allein schafft.</p>
+
+    <div class="article-cta">
+      <h3>Erste-Hilfe-Wissen zwischendurch auffrischen</h3>
+      <p>45 Minuten, kein Betriebsausfall, Zertifikat für die Personalakte.</p>
+      <a href="index.html#kaufen" class="buy-btn" data-locked="false">Jetzt Kurs starten</a>
+    </div>
+
+  </div>
+  <a href="index.html" class="back-home">← Zurück zur Startseite</a>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="index.html">Startseite</a>
+      <a href="mailto:sebastian.roloff@gmx.de">Kontakt</a>
+    </div>
+    <p class="legal-note"><b>Angaben gemäß §5 TMG:</b> Sebastian Roloff, Elisabethstr. 30, 18273 Güstrow. E-Mail: sebastian.roloff@gmx.de. Vollständiges Impressum, Datenschutz und AGB auf der <a href="index.html" style="color:inherit;">Startseite</a>.</p>
+    <div class="copyright">© 112onlinekurs.de 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
