@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Erste Hilfe Online-Kurs | Zertifikat sofort</title>
-<meta name="description" content="Erste-Hilfe-Grundwissen in 45 Minuten. 100% online, Ausbilder-geprüft, Zertifikat sofort. Einmalzahlung 29,99 €.">
+<title>Erste Hilfe Online-Kurs | Vorbereitung auf deinen Präsenzkurs</title>
+<meta name="description" content="Die ideale Vorbereitung auf deinen Erste-Hilfe-Präsenzkurs (Führerschein, Betrieb & mehr) — 45 Min. online, von geprüftem Ausbilder mit 20.000+ Teilnehmern. 29,99 €.">
 <!-- Google Tag -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16549603293"></script>
 <script>
@@ -155,6 +155,8 @@ function gtag_report_conversion() {
   .feature-grid{
     display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:8px;
   }
+  .feature-grid.cols-3{grid-template-columns:repeat(3,1fr);max-width:900px;margin-left:auto;margin-right:auto;}
+  .feature-grid a.feature{text-decoration:none;color:inherit;display:block;}
   .feature{
     background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
     padding:24px 20px;text-align:left;
@@ -261,6 +263,8 @@ function gtag_report_conversion() {
   }
   .sticky-cta .buy-btn{padding:12px 24px;font-size:15px;flex:0 0 auto;}
 
+
+
   @media (max-width:860px){
     .feature-grid{grid-template-columns:repeat(2,1fr);}
     .trust{grid-template-columns:1fr;padding:32px;}
@@ -269,6 +273,20 @@ function gtag_report_conversion() {
     section{padding:52px 0;}
     .sticky-cta{display:flex;}
     body{padding-bottom:76px;}
+  }
+
+  /* ---- Pulsing heart visual ---- */
+  .heart-visual{display:flex;justify-content:center;margin:4px 0 22px;}
+  .heart{position:relative;width:52px;height:47px;animation:heartbeat 1.8s ease-in-out infinite;}
+  .heart:before,.heart:after{content:"";position:absolute;top:0;width:26px;height:42px;background:var(--red);border-radius:26px 26px 0 0;}
+  .heart:before{left:26px;transform:rotate(-45deg);transform-origin:0 100%;}
+  .heart:after{left:0;transform:rotate(45deg);transform-origin:100% 100%;}
+  @keyframes heartbeat{
+    0%,100%{transform:scale(1);}
+    14%{transform:scale(1.15);}
+    28%{transform:scale(1);}
+    42%{transform:scale(1.15);}
+    70%{transform:scale(1);}
   }
 </style>
 </head>
@@ -282,14 +300,20 @@ function gtag_report_conversion() {
 </div>
 
 <header class="hero wrap">
-  <h1>Erste Hilfe.<br><span class="accent">Online.</span></h1>
-  <p class="sub">Fundiertes Erste-Hilfe-Grundwissen in 45 Minuten — ausgebildet vom geprüften Erste-Hilfe-Ausbilder, jederzeit auf dem Handy.</p>
+  <div class="eyebrow-row">
+    <span class="eyebrow">Erste-Hilfe-Ausbilder geprüft</span>
+    <span class="eyebrow">★★★★★ 5,0 bewertet</span>
+    <span class="eyebrow">20.000+ ausgebildete Teilnehmer</span>
+  </div>
+  <div class="heart-visual"><div class="heart"></div></div>
+  <h1>Fit für deinen<br><span class="accent">ERSTE-HILFE-KURS.</span></h1>
+  <p class="sub">45 Minuten Online-Vorbereitung auf den Pflicht-Präsenzkurs — ideal für den Führerschein, genauso hilfreich für betriebliche Auffrischung, Familie und Alltag. Von einem geprüften Erste-Hilfe-Ausbilder mit über 20.000 ausgebildeten Teilnehmern.</p>
 
   <div class="stat-row">
     <div class="stat"><span>45 Min.</span>Gesamtdauer</div>
     <div class="stat"><span>9</span>Lerneinheiten</div>
     <div class="stat"><span>Sofort</span>Zertifikat</div>
-    <div class="stat"><span>10.000+</span>Teilnehmer</div>
+    <div class="stat"><span>20.000+</span>Teilnehmer</div>
   </div>
 
   <div class="cta-block">
@@ -307,6 +331,22 @@ function gtag_report_conversion() {
     <div class="feature"><div class="ico">📱</div><h3>Kein Download</h3><p>Direkt im Browser, keine App nötig.</p></div>
     <div class="feature"><div class="ico">⚡</div><h3>45 Minuten</h3><p>Kompakt, auf den Punkt, ohne Leerlauf.</p></div>
     <div class="feature"><div class="ico">🎓</div><h3>Zertifikat sofort</h3><p>Direkt nach dem Test zum Download.</p></div>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top:1cm;padding-bottom:0;">
+  <div class="stack-head" style="margin-top:0;margin-bottom:1cm;">
+    <span class="line red">Für wen geeignet</span>
+    <span class="line black">Egal, wo du deinen Kurs machst.</span>
+  </div>
+  <div class="feature-grid">
+    <div class="feature" style="border-color:var(--red);position:relative;">
+      <div class="ico">🚗</div><h3>Führerscheinanwärter</h3>
+      <p>Die ideale Vorbereitung auf deinen Pflicht-Präsenzkurs — du kommst vorbereitet statt bei Null.</p>
+    </div>
+    <div class="feature"><div class="ico">🏢</div><h3>Betriebliche Auffrischung</h3><p>Wissen zwischen den gesetzlichen Unterweisungsintervallen auffrischen, ohne Betriebsausfall.</p></div>
+    <div class="feature"><div class="ico">👨‍👩‍👧</div><h3>Eltern &amp; Familie</h3><p>Sicher handeln, wenn's zählt — im Alltag mit Kindern und Angehörigen.</p></div>
+    <div class="feature"><div class="ico">🎓</div><h3>Alle mit Sicherheitsbedürfnis</h3><p>Verein, Ehrenamt, einfach ein gutes Gefühl im Ernstfall.</p></div>
   </div>
 </section>
 
@@ -333,12 +373,17 @@ function gtag_report_conversion() {
     <div>
       <div class="kicker" style="color:#ff5468">Qualität &amp; Vertrauen</div>
       <h2>Ausbilder-<br>geprüft.</h2>
+      <p style="margin-top:18px;font-size:14px;color:#d8d9db;">Keine anonyme Kursplattform — ein echter Praktiker mit jahrelanger Erfahrung in der Erste-Hilfe-Ausbildung.</p>
     </div>
     <div>
-      <p class="lead">Vorgetragen vom zertifizierten Erste-Hilfe-Ausbilder — praxisnah, verständlich, auf den Punkt.</p>
+      <p class="lead"><span class="num">20.000+</span> ausgebildete Teilnehmer über die gesamte Trainer-Laufbahn.</p>
       <ul>
-        <li><span class="num">10.000+</span> ausgebildete Teilnehmer in der Praxis</li>
-        <li>Verständlich erklärt – für Alltag, Familie und Beruf</li>
+        <li>★★★★★ <b>5,0 Sterne</b> bewertet</li>
+        <li>Sanitäter-Ausbildung bei den <b>Johannitern</b></li>
+        <li>Erste-Hilfe-Ausbilder-Ausbildung an der <b>Sanitätsschule Nord</b></li>
+        <li>Mehrjährige Tätigkeit als Erste-Hilfe-Ausbilder beim <b>DRK</b></li>
+        <li>Inhaber einer eigenen Sanitätsschule und von <b>zfkr.de</b></li>
+        <li>Herausgeber von <b>112kinder.de</b> und <b>112onlinekurs.de</b></li>
       </ul>
     </div>
   </div>
@@ -365,6 +410,27 @@ function gtag_report_conversion() {
       <input type="checkbox" class="consentCheck">
       <span><strong>Ja, ich will sofort starten</strong><span class="consent-fine">Mit der Freischaltung verzichte ich ausdrücklich auf mein Widerrufsrecht gemäß §356 Abs. 5 BGB.</span></span>
     </label>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top:1cm;padding-bottom:0;">
+  <div class="stack-head" style="margin-top:0;margin-bottom:1cm;">
+    <span class="line red">Ratgeber</span>
+    <span class="line black">Kurz erklärt.</span>
+  </div>
+  <div class="feature-grid cols-3">
+    <a class="feature" href="erste-hilfe-kurs-fuehrerschein.html">
+      <h3>Erste-Hilfe-Kurs für den Führerschein — was du wissen musst</h3>
+      <p>9 Unterrichtseinheiten, Pflicht-Präsenztermin, was der Online-Teil dabei leisten kann und was nicht.</p>
+    </a>
+    <a class="feature" href="erste-hilfe-pflicht-betrieb.html">
+      <h3>Erste-Hilfe-Pflicht im Betrieb</h3>
+      <p>Wie oft Auffrischung nötig ist und was Arbeitgeber nach DGUV Vorschrift 1 beachten müssen.</p>
+    </a>
+    <a class="feature" href="erste-hilfe-auffrischen.html">
+      <h3>Erste Hilfe auffrischen — wie oft ist sinnvoll?</h3>
+      <p>Wissen verblasst schneller als man denkt. Ein Blick auf sinnvolle Auffrischungsintervalle.</p>
+    </a>
   </div>
 </section>
 
