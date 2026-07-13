@@ -192,7 +192,8 @@ function gtag_report_conversion() {
     flex:0 0 auto;width:30px;height:30px;border-radius:8px;background:var(--panel);
     display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--ink-soft);
   }
-  .curr-row .check{margin-left:auto;color:var(--red);font-weight:800;}
+  .curr-row .check{margin-left:auto;color:var(--red);font-weight:800;flex:0 0 auto;}
+  .curr-label{flex:1 1 auto;min-width:0;}
 
   /* ---- Trust block ---- */
   .trust{
@@ -201,7 +202,7 @@ function gtag_report_conversion() {
   }
   .trust h2{color:#fff;font-size:1.9rem;}
   .trust ul{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;}
-  .trust li{font-size:14.5px;color:#d8d9db;display:flex;gap:10px;}
+  .trust li{font-size:14.5px;color:#d8d9db;line-height:1.45;}
   .trust li b{color:#fff;}
   .trust .num{color:var(--red);font-weight:800;}
   .trust .lead{font-size:17px;color:#fff;font-weight:600;line-height:1.4;}
@@ -224,7 +225,8 @@ function gtag_report_conversion() {
     padding:20px 0;font-size:16px;font-weight:600;display:flex;justify-content:space-between;align-items:center;
     color:var(--ink);
   }
-  .faq-q .arrow{transition:transform .2s ease;color:var(--red);}
+  .faq-q .arrow{transition:transform .2s ease;color:var(--red);flex:0 0 auto;margin-left:14px;}
+  .faq-q-text{flex:1 1 auto;min-width:0;}
   .faq-item.open .arrow{transform:rotate(180deg);}
   .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;font-size:14.5px;color:var(--ink-soft);}
   .faq-a p{padding-bottom:20px;}
@@ -260,8 +262,10 @@ function gtag_report_conversion() {
     background:rgba(255,255,255,.95);backdrop-filter:blur(8px);
     border-top:1px solid var(--line);
     padding:12px 20px;display:none;align-items:center;justify-content:space-between;gap:12px;
+    transition:transform .25s ease;
   }
   .sticky-cta .buy-btn{padding:12px 24px;font-size:15px;flex:0 0 auto;}
+  .sticky-cta.is-hidden{transform:translateY(120%);}
 
 
 
@@ -273,6 +277,13 @@ function gtag_report_conversion() {
     section{padding:52px 0;}
     .sticky-cta{display:flex;}
     body{padding-bottom:76px;}
+  }
+  @media (max-width:640px){
+    .feature-grid,
+    .feature-grid.cols-3{
+      grid-template-columns:1fr;
+      max-width:440px;margin-left:auto;margin-right:auto;
+    }
   }
 
   /* ---- Pulsing heart visual ---- */
@@ -356,15 +367,15 @@ function gtag_report_conversion() {
     <span class="line black">9 Einheiten. Alles, was zählt.</span>
   </div>
   <div class="curr-list">
-    <div class="curr-row"><div class="curr-num">01</div>Basismaßnahmen &amp; Eigenschutz<span class="check">✓</span></div>
-    <div class="curr-row"><div class="curr-num">02</div>Bewusstlosigkeit &amp; stabile Seitenlage<span class="check">✓</span></div>
-    <div class="curr-row"><div class="curr-num">03</div>Herz-Lungen-Wiederbelebung (HLW)<span class="check">✓</span></div>
-    <div class="curr-row"><div class="curr-num">04</div>AED — Defibrillator<span class="check">✓</span></div>
-    <div class="curr-row"><div class="curr-num">05</div>Wunden, Blutungen &amp; Schock<span class="check">✓</span></div>
-    <div class="curr-row"><div class="curr-num">06</div>Verkehrsunfälle<span class="check">✓</span></div>
-    <div class="curr-row"><div class="curr-num">07</div>Knochenbrüche &amp; HWS<span class="check">✓</span></div>
-    <div class="curr-row"><div class="curr-num">08</div>Verbrennungen, Vergiftungen &amp; Strom<span class="check">✓</span></div>
-    <div class="curr-row"><div class="curr-num">09</div>Schnellwiederholung &amp; Wissenstest<span class="check">✓</span></div>
+    <div class="curr-row"><div class="curr-num">01</div><span class="curr-label">Basismaßnahmen &amp; Eigenschutz</span><span class="check">✓</span></div>
+    <div class="curr-row"><div class="curr-num">02</div><span class="curr-label">Bewusstlosigkeit &amp; stabile Seitenlage</span><span class="check">✓</span></div>
+    <div class="curr-row"><div class="curr-num">03</div><span class="curr-label">Herz-Lungen-Wiederbelebung (HLW)</span><span class="check">✓</span></div>
+    <div class="curr-row"><div class="curr-num">04</div><span class="curr-label">AED — Defibrillator</span><span class="check">✓</span></div>
+    <div class="curr-row"><div class="curr-num">05</div><span class="curr-label">Wunden, Blutungen &amp; Schock</span><span class="check">✓</span></div>
+    <div class="curr-row"><div class="curr-num">06</div><span class="curr-label">Verkehrsunfälle</span><span class="check">✓</span></div>
+    <div class="curr-row"><div class="curr-num">07</div><span class="curr-label">Knochenbrüche &amp; HWS</span><span class="check">✓</span></div>
+    <div class="curr-row"><div class="curr-num">08</div><span class="curr-label">Verbrennungen, Vergiftungen &amp; Strom</span><span class="check">✓</span></div>
+    <div class="curr-row"><div class="curr-num">09</div><span class="curr-label">Schnellwiederholung &amp; Wissenstest</span><span class="check">✓</span></div>
   </div>
 </section>
 
@@ -441,27 +452,27 @@ function gtag_report_conversion() {
   </div>
   <div class="faq-list">
     <div class="faq-item">
-      <button class="faq-q">Bekomme ich nach dem Kurs sofort mein Zertifikat?<span class="arrow">⌄</span></button>
+      <button class="faq-q"><span class="faq-q-text">Bekomme ich nach dem Kurs sofort mein Zertifikat?</span><span class="arrow">⌄</span></button>
       <div class="faq-a"><p>Ja — sobald du alle Lektionen gesehen und den Abschlusstest mit mind. 80% bestanden hast, kannst du dein Zertifikat direkt herunterladen und ausdrucken.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">Wie lange habe ich Zugang?<span class="arrow">⌄</span></button>
+      <button class="faq-q"><span class="faq-q-text">Wie lange habe ich Zugang?</span><span class="arrow">⌄</span></button>
       <div class="faq-a"><p>Dauerhafter Zugang — einmal kaufen, für immer nutzen. Kein Abo, keine versteckten Kosten.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">Funktioniert der Kurs auf dem Handy?<span class="arrow">⌄</span></button>
+      <button class="faq-q"><span class="faq-q-text">Funktioniert der Kurs auf dem Handy?</span><span class="arrow">⌄</span></button>
       <div class="faq-a"><p>Ja, vollständig mobiloptimiert. Kein App-Download nötig — läuft direkt im Browser auf jedem Gerät.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">Wie zahle ich?<span class="arrow">⌄</span></button>
+      <button class="faq-q"><span class="faq-q-text">Wie zahle ich?</span><span class="arrow">⌄</span></button>
       <div class="faq-a"><p>Über CopeCart — Kreditkarte, PayPal, SEPA, Apple Pay oder Google Pay. 100% sicher und verschlüsselt.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">Kann ich den Kurs für den Führerschein nutzen?<span class="arrow">⌄</span></button>
+      <button class="faq-q"><span class="faq-q-text">Kann ich den Kurs für den Führerschein nutzen?</span><span class="arrow">⌄</span></button>
       <div class="faq-a"><p>Dieser Online-Kurs vermittelt fundiertes theoretisches Erste-Hilfe-Wissen. Er ersetzt nicht den nach §19 Abs. 1 FeV vorgeschriebenen Präsenzkurs. Das Zertifikat ist kein amtlicher Führerschein-Nachweis.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">Kann ich den Kauf rückgängig machen?<span class="arrow">⌄</span></button>
+      <button class="faq-q"><span class="faq-q-text">Kann ich den Kauf rückgängig machen?</span><span class="arrow">⌄</span></button>
       <div class="faq-a"><p>Mit der Bestätigung der Checkbox und dem Kauf stimmst du der sofortigen Ausführung zu und verzichtest ausdrücklich auf dein Widerrufsrecht gemäß §356 Abs. 5 BGB. Der Kurs wird sofort freigeschaltet.</p></div>
     </div>
   </div>
@@ -628,6 +639,20 @@ function gtag_report_conversion() {
       document.getElementById('cookieBanner').classList.add('active');
     }
     // stored === 'denied' → Banner bleibt zu, kein Pixel
+  })();
+
+  // ---- Sticky-CTA ausblenden, solange die Preisbox mit eigenem Kaufbutton sichtbar ist ----
+  // Verhindert, dass die schwebende Leiste den "Jetzt Kurs starten"-Button im #kaufen-Bereich verdeckt.
+  (function toggleStickyCtaNearPricing(){
+    const kaufen = document.getElementById('kaufen');
+    const stickyCta = document.querySelector('.sticky-cta');
+    if(!kaufen || !stickyCta || typeof IntersectionObserver === 'undefined') return;
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        stickyCta.classList.toggle('is-hidden', entry.isIntersecting);
+      });
+    }, { threshold: 0.2 });
+    observer.observe(kaufen);
   })();
 </script>
 
