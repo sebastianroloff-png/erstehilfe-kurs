@@ -12,18 +12,11 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-16549603293');
-</script><!-- Google Ads Conversion - Kauf -->
-<script>
-function gtag_report_conversion() {
-  gtag('event', 'conversion', {
-    'send_to': 'AW-16549603293/4CJPCO3U0bMcEN3Pu9M9',
-    'value': 29.99,
-    'currency': 'EUR',
-    'transaction_id': ''
-  });
-  return true;
-}
 </script>
+<!-- Der Google-Ads-Kaufabschluss (gtag_report_conversion) wurde von hier entfernt.
+     Er feuerte bisher beim Klick auf "Jetzt Kurs starten" — das zählte Checkout-Klicks,
+     nicht echte Zahlungen. Die echte Conversion feuert jetzt erst auf danke.html,
+     die CopeCart nach erfolgreicher Zahlung aufruft. -->
 <style>
   :root{
     --bg:#ffffff;
@@ -317,7 +310,7 @@ function gtag_report_conversion() {
     <span class="eyebrow">20.000+ ausgebildete Teilnehmer</span>
   </div>
   <div class="heart-visual"><div class="heart"></div></div>
-  <h1>Fit für deinen<br><span class="accent">ERSTE-HILFE-KURS.</span></h1>
+  <h1>Online <span class="accent">Erste Hilfe Kurs.</span></h1>
   <p class="sub">45 Minuten Online-Vorbereitung auf den Pflicht-Präsenzkurs — ideal für den Führerschein, genauso hilfreich für betriebliche Auffrischung, Familie und Alltag. Von einem geprüften Erste-Hilfe-Ausbilder mit über 20.000 ausgebildeten Teilnehmern.</p>
 
   <div class="stat-row">
@@ -574,9 +567,11 @@ function gtag_report_conversion() {
   buyBtns.forEach(btn=>{
     if(!btn) return;
     btn.addEventListener('click', (e)=>{
-      if((btn.id === 'buyBtnMain' || btn.id === 'buyBtnTop') && typeof gtag_report_conversion === 'function'){
-        gtag_report_conversion();
-      }
+      // Hinweis: Der Google-Ads-Kaufabschluss (gtag_report_conversion) wird NICHT mehr
+      // hier beim Klick gefeuert — das zählte bisher nur "auf Button geklickt", nicht
+      // "wirklich bezahlt". Der echte Conversion-Trigger liegt jetzt auf danke.html,
+      // die CopeCart erst nach erfolgreicher Zahlung aufruft (siehe CopeCart-Produkt-
+      // einstellungen: "Danke-Seite" = https://112onlinekurs.de/danke.html).
       if((btn.id === 'buyBtnMain' || btn.id === 'buyBtnTop') && window.fbq){
         fbq('track', 'InitiateCheckout', {value: 29.99, currency: 'EUR'});
       }
@@ -639,20 +634,6 @@ function gtag_report_conversion() {
       document.getElementById('cookieBanner').classList.add('active');
     }
     // stored === 'denied' → Banner bleibt zu, kein Pixel
-  })();
-
-  // ---- Sticky-CTA ausblenden, solange die Preisbox mit eigenem Kaufbutton sichtbar ist ----
-  // Verhindert, dass die schwebende Leiste den "Jetzt Kurs starten"-Button im #kaufen-Bereich verdeckt.
-  (function toggleStickyCtaNearPricing(){
-    const kaufen = document.getElementById('kaufen');
-    const stickyCta = document.querySelector('.sticky-cta');
-    if(!kaufen || !stickyCta || typeof IntersectionObserver === 'undefined') return;
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        stickyCta.classList.toggle('is-hidden', entry.isIntersecting);
-      });
-    }, { threshold: 0.2 });
-    observer.observe(kaufen);
   })();
 </script>
 
