@@ -430,24 +430,11 @@
   <div class="faq-list">
     <div class="faq-item">
       <button class="faq-q"><span class="faq-q-text">Bekomme ich nach dem Kurs sofort mein Zertifikat?</span><span class="arrow">⌄</span></button>
-      <div class="faq-a"><p>Ja — sobald du alle Lektionen gesehen und den Abschlusstest mit mind. 80% bestanden hast, kannst du dein Zertifikat direkt herunterladen und ausdrucken.</p></div>Kurz gecheckt – nein, nicht Zeile 433. Lass mich das exakt verifizieren.Im Original (also auf GitHub, unverändert) ist das so:
-
-- **Zeile 431:** `<button ...>Bekomme ich nach dem Kurs sofort mein Zertifikat?...`
-- **Zeile 432:** `<div class="faq-a">...Zertifikat direkt herunterladen...</div>`
-- **Zeile 433:** `</div>` ← Ende des ersten FAQ-Items
-
-Dein neuer Block gehört **nach Zeile 433**, also direkt bevor die Zeile mit `<div class="faq-item">` für "Wie lange habe ich Zugang?" kommt.
-
-Zeile 433 selbst ist nur das schließende `</div>` – wenn du genau dort (also danach) einfügst, passt es. Falls du meintest, du würdest den Text bei Zeile 433 reinschreiben statt dahinter eine neue Zeile einzufügen: nicht in die 433 selbst reinschreiben, sondern eine neue Zeile danach einfügen.
-
-Am sichersten: Setz den Cursor ans Ende von Zeile 433 (nach dem `</div>`), drück Enter, und füge den Block ein:
-
-```html
+      <div class="faq-a"><p>Ja — sobald du alle Lektionen gesehen und den Abschlusstest mit mind. 80% bestanden hast, kannst du dein Zertifikat direkt herunterladen und ausdrucken.</p></div>
+    </div>
     <div class="faq-item">
       <button class="faq-q"><span class="faq-q-text">Muss ich Erste Hilfe auch ohne Führerschein auffrischen?</span><span class="arrow">⌄</span></button>
       <div class="faq-a"><p>Ja, unbedingt. Erste Hilfe brauchst du nicht für den Führerschein, sondern für den Ernstfall — im Straßenverkehr, beim Sport, mit Kindern unterwegs oder einfach, weil du Verantwortung für andere trägst. Wissen verblasst mit der Zeit. Regelmäßig auffrischen kann im entscheidenden Moment ein Leben retten.</p></div>
-    </div>
-```
     </div>
     <div class="faq-item">
       <button class="faq-q"><span class="faq-q-text">Wie lange habe ich Zugang?</span><span class="arrow">⌄</span></button>
