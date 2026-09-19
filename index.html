@@ -6,10 +6,18 @@
 <title>Erste Hilfe Online-Kurs | Vorbereitung auf deinen Präsenzkurs</title>
 <meta name="description" content="Die ideale Vorbereitung auf deinen Erste-Hilfe-Präsenzkurs (Führerschein, Betrieb & mehr) — 45 Min. online, von geprüftem Ausbilder mit 20.000+ Teilnehmern. 29,99 €.">
 <!-- Google Tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16549603293"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16549603293"></script>
+<script>
   gtag('js', new Date());
   gtag('config', 'AW-16549603293');
 </script>
@@ -611,12 +619,24 @@
   function setCookieConsent(granted){
     localStorage.setItem(COOKIE_KEY, granted ? 'granted' : 'denied');
     document.getElementById('cookieBanner').classList.remove('active');
+    gtag('consent', 'update', {
+      'ad_storage': granted ? 'granted' : 'denied',
+      'ad_user_data': granted ? 'granted' : 'denied',
+      'ad_personalization': granted ? 'granted' : 'denied',
+      'analytics_storage': granted ? 'granted' : 'denied'
+    });
     if(granted) loadMetaPixel();
   }
 
   (function initConsentBanner(){
     const stored = localStorage.getItem(COOKIE_KEY);
     if(stored === 'granted'){
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
       loadMetaPixel();
     } else if(stored === null){
       document.getElementById('cookieBanner').classList.add('active');
